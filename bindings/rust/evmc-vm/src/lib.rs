@@ -694,7 +694,7 @@ impl From<StepResult> for ffi::evmc_step_result {
     }
 }
 
-/// Returns a pointer to a stack-allocated evmc_step_result.
+/// Converts ffi type into steppable interface result type.
 impl From<ffi::evmc_step_result> for StepResult {
     fn from(value: ffi::evmc_step_result) -> Self {
         let ret = Self {
