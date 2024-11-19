@@ -755,7 +755,7 @@ impl From<ffi::evmc_step_result> for StepResult {
             },
         };
 
-        // Release allocated ffi struct.
+        // If release function is provided, use it to release resources.
         if let Some(release) = value.release {
             unsafe {
                 release(&value);
